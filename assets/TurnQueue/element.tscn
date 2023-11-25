@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1mv8y33yxtbs"]
+
+[ext_resource type="Script" path="res://assets/TurnQueue/Element.gd" id="1_r6blf"]
+[ext_resource type="Script" path="res://assets/TurnQueue/QueueElement.gd" id="2_qayqy"]
+[ext_resource type="PackedScene" uid="uid://dqqo6hdmafe4" path="res://assets/Turntip.tscn" id="3_vas5u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sju3"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_r6blf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8sju3")
+
+[node name="QueueElement" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_qayqy")
+visuals_scene = ExtResource("3_vas5u")
+owner_path = NodePath("..")
+title = "Stats"
+stats = Array[String](["Vie", "Attack"])
+value = Array[int]([100, 10])

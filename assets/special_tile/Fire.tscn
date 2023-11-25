@@ -63,6 +63,7 @@ polygon = PackedVector2Array(-56, -7, 0, -37, 57, -7, 0, 23)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3li54")
+frame_progress = 0.508444
 
 [node name="Tooltip" type="Control" parent="."]
 layout_mode = 3
@@ -73,7 +74,6 @@ script = ExtResource("3_wyd2o")
 visuals_scene = ExtResource("4_0hxmr")
 owner_path = NodePath("..")
 title = "Piment Chinois"
-value = Array[int]([1])
-effect = Array[String](["Burning"])
-effectColor = Array[Color]([Color(1, 0, 0, 1)])
-backColor = Color(0.196078, 0, 0, 1)
+value = Array[int]([1, 4])
+effect = Array[String](["burning", "aa"])
+effectColor = Array[Color]([Color(1, 0, 0, 1), Color(1, 0, 0, 1)])
