@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuokdb4pni0j"
-path="res://.godot/imported/spritesheet.png-76e0b916bc20d45ac6900db6e21d8a9e.ctex"
+uid="uid://cppsxqw6jw4xp"
+path="res://.godot/imported/Grand-Mere_Kalle.png-4d0706a5785f97392d401d2aaec62d73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spritesheet.png"
-dest_files=["res://.godot/imported/spritesheet.png-76e0b916bc20d45ac6900db6e21d8a9e.ctex"]
+source_file="res://assets/boss/Grand-Mere_Kalle.png"
+dest_files=["res://.godot/imported/Grand-Mere_Kalle.png-4d0706a5785f97392d401d2aaec62d73.ctex"]
 
 [params]
 
