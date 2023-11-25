@@ -12,5 +12,6 @@ func _process(delta):
 		zoom = get("zoom") + Vector2(0.5, 0.5)
 	if Input.is_action_just_released("zoom_out") and zoom.x > 1:
 		zoom = get("zoom") - Vector2(0.5, 0.5)
-	position = follow.position
+	if follow:
+		position = follow.position
 	pass
