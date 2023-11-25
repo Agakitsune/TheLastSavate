@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://beexyj2ou2yx8"]
+
+[ext_resource type="Texture2D" uid="uid://2rwru0alxxih" path="res://assets/fire_tile.png" id="1_y817w"]
+[ext_resource type="Script" path="res://assets/special_tile/Fire.gd" id="2_y4733"]
+[ext_resource type="Script" path="res://assets/Tooltip.gd" id="3_wyd2o"]
+[ext_resource type="PackedScene" uid="uid://cosdub53twp2t" path="res://assets/tiletip.tscn" id="4_0hxmr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svt0y"]
+atlas = ExtResource("1_y817w")
+region = Rect2(0, 0, 100, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq3oa"]
+atlas = ExtResource("1_y817w")
+region = Rect2(100, 0, 100, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcvie"]
+atlas = ExtResource("1_y817w")
+region = Rect2(200, 0, 100, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yqhh"]
+atlas = ExtResource("1_y817w")
+region = Rect2(300, 0, 100, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o437"]
+atlas = ExtResource("1_y817w")
+region = Rect2(400, 0, 100, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu0e8"]
+atlas = ExtResource("1_y817w")
+region = Rect2(500, 0, 100, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3li54"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svt0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq3oa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcvie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yqhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o437")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu0e8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("2_y4733")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-56, -7, 0, -37, 57, -7, 0, 23)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3li54")
+
+[node name="Tooltip" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_wyd2o")
+visuals_scene = ExtResource("4_0hxmr")
+owner_path = NodePath("..")
+title = "Piment Chinois"
+value = Array[int]([1])
+effect = Array[String](["Burning"])
+effectColor = Array[Color]([Color(1, 0, 0, 1)])
+backColor = Color(0.196078, 0, 0, 1)
