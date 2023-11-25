@@ -17,6 +17,9 @@ config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=1440
+window/size/viewport_height=810
+window/size/resizable=false
 mouse_cursor/custom_image="res://assets/cursor.png"
 mouse_cursor/custom_image_hotspot=Vector2(1, 1)
 

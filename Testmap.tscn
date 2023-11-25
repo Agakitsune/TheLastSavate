@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://u0hlong8agpf"]
+[gd_scene load_steps=19 format=3 uid="uid://u0hlong8agpf"]
 
 [ext_resource type="Texture2D" uid="uid://2rwru0alxxih" path="res://assets/fire_tile.png" id="1_b3j0l"]
 [ext_resource type="Texture2D" uid="uid://ctb4fx1k8ekpc" path="res://assets/isometric tileset/spritesheet.png" id="1_fb0bd"]
@@ -9,17 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ibqbx6nj8e0v" path="res://assets/select.png" id="4_l3eyq"]
 [ext_resource type="Texture2D" uid="uid://46rilqhaqv80" path="res://icon.svg" id="5_vmlpc"]
 [ext_resource type="Script" path="res://Icon.gd" id="6_kupa5"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ermag"]
-texture = ExtResource("1_b3j0l")
-texture_region_size = Vector2i(100, 66)
-0:0/animation_frame_0/duration = 1.0
-0:0/animation_frame_1/duration = 0.2
-0:0/animation_frame_2/duration = 0.2
-0:0/animation_frame_3/duration = 1.0
-0:0/animation_frame_4/duration = 0.2
-0:0/animation_frame_5/duration = 0.2
-0:0/0 = 0
+[ext_resource type="Script" path="res://Effects.gd" id="10_i1y0b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lkye8"]
 texture = ExtResource("1_fb0bd")
@@ -168,8 +158,24 @@ sources/2 = SubResource("TileSetAtlasSource_lkye8")
 sources/5 = SubResource("TileSetAtlasSource_7rpcy")
 sources/6 = SubResource("TileSetAtlasSource_fb2p1")
 sources/7 = SubResource("TileSetAtlasSource_106lp")
-sources/1 = SubResource("TileSetAtlasSource_ermag")
 sources/3 = SubResource("TileSetAtlasSource_mca7q")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3cy8"]
+texture = ExtResource("1_b3j0l")
+texture_region_size = Vector2i(100, 66)
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 0.2
+0:0/animation_frame_2/duration = 0.2
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 0.2
+0:0/animation_frame_5/duration = 0.2
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wgppn"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(100, 50)
+sources/1 = SubResource("TileSetAtlasSource_v3cy8")
 
 [node name="Map" type="Node2D"]
 
@@ -180,7 +186,6 @@ format = 2
 layer_0/name = "Select"
 layer_0/y_sort_enabled = true
 layer_0/z_index = 2
-layer_0/tile_data = PackedInt32Array(262143, 1, 0, 196607, 1, 0, 131070, 1, 0, 65534, 1, 0, -3, 1, 0, -65538, 1, 0, -131074, 1, 0, -196609, 1, 0, -262145, 1, 0, -262144, 1, 0, -196608, 1, 0, -131071, 1, 0, -65535, 1, 0, 1, 1, 0, 65536, 1, 0, 131072, 1, 0)
 layer_1/name = "Truc"
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
@@ -207,3 +212,11 @@ script = ExtResource("6_kupa5")
 [node name="Camera" type="Camera2D" parent="."]
 offset = Vector2(-0.12, 0)
 script = ExtResource("4_005db")
+
+[node name="Effects" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_wgppn")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(-65539, 1, 0, -3, 1, 0, 65533, 1, 0, 131069, 1, 0, 196605, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 65537, 1, 0, 1, 1, 0, -65535, 1, 0, -131071, 1, 0, -131072, 1, 0, -65537, 1, 0, -65538, 1, 0)
+script = ExtResource("10_i1y0b")
