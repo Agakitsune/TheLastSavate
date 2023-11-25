@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cvjuxbgf2hybk"]
+[gd_scene load_steps=26 format=3 uid="uid://cvjuxbgf2hybk"]
 
 [ext_resource type="Script" path="res://character_viewer.gd" id="1_t4afi"]
 [ext_resource type="Texture2D" uid="uid://b6sfrgq2c0ms0" path="res://assets/dirtHigh.png" id="1_yidp5"]
@@ -11,8 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://dyn71enjrj3ny" path="res://assets/super_payet/SuperPayet_0003.png" id="6_mcvb1"]
 [ext_resource type="Texture2D" uid="uid://brqjvcpnxn86s" path="res://assets/super_payet/SuperPayet_0004.png" id="7_bbhjc"]
 [ext_resource type="Texture2D" uid="uid://co1rr4qm5if2j" path="res://assets/super_payet/SuperPayet_0005.png" id="8_tqplx"]
+[ext_resource type="Texture2D" uid="uid://cqs7v2oj8uaaa" path="res://assets/super_payet/SuperPayet_neutral_back_0001.png" id="9_c5vd1"]
+[ext_resource type="Texture2D" uid="uid://cyoqdhrt6uhac" path="res://assets/super_payet/SuperPayet_neutral_back_0002.png" id="10_prm1h"]
+[ext_resource type="Texture2D" uid="uid://dnt83ohrq8a8d" path="res://assets/super_payet/SuperPayet_neutral_back_0003.png" id="11_pcd7l"]
 [ext_resource type="Script" path="res://Label.gd" id="12_6dyp7"]
+[ext_resource type="Texture2D" uid="uid://c7mogfb40l2kl" path="res://assets/super_payet/SuperPayet_neutral_back_0004.png" id="12_g6wnq"]
 [ext_resource type="Texture2D" uid="uid://dbbyry3nrf6md" path="res://assets/move.png" id="13_6bpbl"]
+[ext_resource type="Texture2D" uid="uid://gcyq0bspuica" path="res://assets/super_payet/SuperPayet_neutral_back_0005.png" id="13_k4n07"]
+[ext_resource type="Texture2D" uid="uid://c5aeo5da1eaa" path="res://assets/super_payet/SuperPayet_R_cycle_front_0002.png" id="14_vtxo8"]
+[ext_resource type="Texture2D" uid="uid://o4b53kuklmi8" path="res://assets/super_payet/SuperPayet_R_cycle_front_0003.png" id="15_73788"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pi6ph"]
 texture = ExtResource("1_yidp5")
@@ -24,18 +31,6 @@ tile_shape = 1
 tile_layout = 5
 tile_size = Vector2i(100, 50)
 sources/0 = SubResource("TileSetAtlasSource_pi6ph")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_865pu"]
-atlas = ExtResource("2_xnbfj")
-region = Rect2(0, 150, 100, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mid4t"]
-atlas = ExtResource("2_xnbfj")
-region = Rect2(0, 300, 100, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qryvd"]
-atlas = ExtResource("2_xnbfj")
-region = Rect2(100, 300, 100, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v8y4q"]
 atlas = ExtResource("2_xnbfj")
@@ -69,7 +64,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_865pu")
+"texture": ExtResource("9_c5vd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_prm1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pcd7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_g6wnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_k4n07")
 }],
 "loop": true,
 "name": &"up",
@@ -77,10 +84,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mid4t")
+"texture": ExtResource("14_vtxo8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qryvd")
+"texture": ExtResource("15_73788")
 }],
 "loop": true,
 "name": &"walk_down",
@@ -112,9 +119,9 @@ layer_0/tile_data = PackedInt32Array(65535, 0, 0, -2, 0, 0, 65534, 0, 0, 131070,
 script = ExtResource("3_67m04")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -42)
+position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_p06j6")
-animation = &"down"
+animation = &"walk_down"
 
 [node name="Button" type="Button" parent="."]
 offset_left = -133.0
