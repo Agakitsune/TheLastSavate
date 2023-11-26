@@ -25,10 +25,6 @@ func _input(event : InputEvent):
 		position.x += speed * get_process_delta_time()
 	if event.is_action("ui_left"):
 		position.x -= speed * get_process_delta_time()
-	if event.is_action("ui_up"):
-		position.y -= speed * get_process_delta_time()
-	if event.is_action("ui_down"):
-		position.y += speed * get_process_delta_time()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
