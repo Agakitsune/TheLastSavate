@@ -13,7 +13,7 @@ func _ready():
 		var line = HBoxContainer.new()
 		
 		var stat = Label.new()
-		stat.text = str(stats[i]) + ":"
+		stat.text = str(stats[i]) + " :"
 		stat.set("theme_override_font_sizes/font_size", 14)
 		
 		var val = Label.new()
@@ -27,5 +27,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass

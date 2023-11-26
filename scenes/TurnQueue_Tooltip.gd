@@ -36,5 +36,5 @@ func _mouse_exit():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	_visuals.global_position = get_global_mouse_position() +Vector2(16,16)
+	_visuals.global_position = get_global_mouse_position() + Vector2(16,16)
 	pass

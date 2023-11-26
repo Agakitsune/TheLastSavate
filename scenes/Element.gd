@@ -9,7 +9,8 @@ func _ready():
 		var obj = element.instantiate()
 		obj._ready()
 		
-		obj.setTexture(texture)
+		var sprite = obj.getSprite()
+		sprite.texture = texture
 		add_child(obj)
 	pass # Replace with function body.
 

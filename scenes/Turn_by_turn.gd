@@ -2,15 +2,17 @@ extends Node2D
 
 class_name TurnQueue
 
-var current_character
-var color_rect
+var current_character: ColorRect
+var arrow
+var arrow_pos
 
 func _ready():
 	initialize()
 
 func initialize():
 	current_character = get_child(0)
-	current_character.color = Color.WHITE	
+	arrow_pos  = current_character
+	current_character.color.a = 0
 
 func _input(event):
 	if event is InputEventKey:
@@ -19,7 +21,7 @@ func _input(event):
 
 func play_turn():
 	current_character.get_child(0)
-	current_character.color = Color.RED	
+	current_character.color.a = 1
 	var new_index : int = (current_character.get_index() + 1) % get_child_count()
 	current_character = get_child(new_index)
-	current_character.color = Color.WHITE
+	current_character.color.a = 0	
