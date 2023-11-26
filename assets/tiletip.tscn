@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://cosdub53twp2t"]
+
+[ext_resource type="Script" path="res://assets/tiletip.gd" id="1_lefi8"]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_lefi8")
+
+[node name="M" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Back" type="ColorRect" parent="M"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="M1" type="MarginContainer" parent="M"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="V" type="VBoxContainer" parent="M/M1"]
+layout_mode = 2
+
+[node name="M2" type="MarginContainer" parent="M/M1/V"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="Title" type="Label" parent="M/M1/V/M2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Pyro"
+vertical_alignment = 1
