@@ -1,7 +1,56 @@
-[gd_scene load_steps=16 format=3 uid="uid://doxm8aw8vc2hd"]
+[gd_scene load_steps=29 format=3 uid="uid://doxm8aw8vc2hd"]
 
+[ext_resource type="Texture2D" uid="uid://b7kbanoo4hjfy" path="res://assets/boss/Grand-Mere_Kalle_dead.png" id="1_kvjkb"]
 [ext_resource type="Texture2D" uid="uid://do4orwcml6fhp" path="res://assets/boss/Grand-Mere_Kalle.png" id="1_lbh38"]
 [ext_resource type="Script" path="res://scenes/AnimatedBoss.gd" id="2_giojd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq5j8"]
+atlas = ExtResource("1_kvjkb")
+region = Rect2(0, 0, 256, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g6m7"]
+atlas = ExtResource("1_kvjkb")
+region = Rect2(256, 0, 256, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfen4"]
+atlas = ExtResource("1_kvjkb")
+region = Rect2(512, 0, 256, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fdvp"]
+atlas = ExtResource("1_kvjkb")
+region = Rect2(768, 0, 256, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt8om"]
+atlas = ExtResource("1_kvjkb")
+region = Rect2(1024, 0, 256, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glnyn"]
+atlas = ExtResource("1_kvjkb")
+region = Rect2(1280, 0, 256, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0lk4"]
+atlas = ExtResource("1_kvjkb")
+region = Rect2(1536, 0, 256, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml30a"]
+atlas = ExtResource("1_kvjkb")
+region = Rect2(1792, 0, 256, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aiys"]
+atlas = ExtResource("1_kvjkb")
+region = Rect2(2048, 0, 256, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5m1k"]
+atlas = ExtResource("1_kvjkb")
+region = Rect2(2304, 0, 256, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdfpf"]
+atlas = ExtResource("1_kvjkb")
+region = Rect2(2560, 0, 256, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2qwh"]
+atlas = ExtResource("1_kvjkb")
+region = Rect2(2816, 0, 256, 480)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17vce"]
 atlas = ExtResource("1_lbh38")
@@ -53,6 +102,47 @@ region = Rect2(2816, 0, 256, 480)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yj7by"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq5j8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g6m7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfen4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fdvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt8om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glnyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0lk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml30a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aiys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5m1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdfpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2qwh")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 2.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_17vce")
@@ -109,3 +199,5 @@ size_flags_horizontal = 4
 step = 1.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
