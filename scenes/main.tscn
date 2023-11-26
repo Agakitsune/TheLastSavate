@@ -131,7 +131,6 @@ tile_layout = 4
 tile_size = Vector2i(32, 16)
 sources/0 = SubResource("TileSetAtlasSource_ybhkq")
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_21dm8"]
 atlas = ExtResource("2_u5diw")
 region = Rect2(0, 0, 320, 320)

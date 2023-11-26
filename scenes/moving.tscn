@@ -215,5 +215,4 @@ frame_progress = 0.906886
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="CharacterBody2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
 [connection signal="mouse_shape_entered" from="CharacterBody2D" to="." method="_on_character_body_2d_mouse_shape_entered"]
