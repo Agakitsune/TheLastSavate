@@ -3,6 +3,9 @@ extends Node2D
 @export var start_tile: Array[Vector2]
 @export var enemy_tile: Array[Vector2]
 @export var enemy: Array[PackedScene]
+@export var boss: PackedScene
+
+@export var attack_tile: Array[Vector2]
 
 @export var player: PackedScene
 
@@ -10,6 +13,7 @@ extends Node2D
 @export var select_stage: TileMap
 
 @onready var _player = player.instantiate()
+@onready var _boss = boss.instantiate()
 
 var _enemies: Array[Node]
 var _turn: Array[Node]
@@ -38,6 +42,9 @@ func _ready():
 	_player.notifier = self
 	$Button.hide()
 	$Button2.hide()
+	$Button3.hide()
+	
+	$TileMap.add_child(_boss)
 
 	$Up.hide()
 	$Left.hide()
@@ -125,11 +132,16 @@ func _on_button_pressed():
 func _on_button_2_pressed():
 	_setup_phase(Phase.MOVE_PHASE)
 	pass # Replace with function body.	
+	
+func _on_button_3_pressed():
+	_setup_phase(Phase.ORIENTATION2_PHASE)
+	pass # Replace with function body.	
 
 func _setup_phase(phase: Phase):
 	_phase = phase
 	if phase == Phase.ORIENTATION_PHASE or phase == Phase.ORIENTATION2_PHASE:
 		$Button.hide()
+		$Button3.hide()
 		select_stage.hide()
 
 		$Button2.show()
@@ -155,6 +167,7 @@ func _setup_phase(phase: Phase):
 		
 		_generate_moves()
 	elif phase == Phase.ATTACK_PHASE:
+		$Button3.show()
 		for i in range(0, select_stage.get_child_count()):
 			select_stage.remove_child(select_stage.get_child(0))
 		select_stage.show()
@@ -185,8 +198,8 @@ func _generate_attack():
 	for e in _enemies:
 		tile_pos = stage.local_to_map(e.global_position)
 		if tile_pos in tiles:
-			tiles.erase(tile_pos)
 			attack.append(tile_pos)
+	tiles.clear()
 
 	for c in tiles:
 		select_stage.set_cell(0, c, 0, Vector2(0,0))

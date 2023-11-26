@@ -1,26 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://d2lafi8xy125x"]
+[gd_scene load_steps=17 format=3 uid="uid://ciuoe8fmenu07"]
 
-[ext_resource type="Texture2D" uid="uid://bgy884ulcjsrf" path="res://assets/Props_ground.png" id="1_4url3"]
 [ext_resource type="Texture2D" uid="uid://do4orwcml6fhp" path="res://assets/boss/Grand-Mere_Kalle.png" id="2_d457g"]
 [ext_resource type="Script" path="res://scenes/AnimatedBoss.gd" id="3_ollry"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjxta"]
-texture = ExtResource("1_4url3")
-texture_region_size = Vector2i(100, 65)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_b354t"]
 tile_shape = 1
 tile_layout = 5
 tile_size = Vector2i(100, 55)
-sources/0 = SubResource("TileSetAtlasSource_wjxta")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17vce"]
 atlas = ExtResource("2_d457g")
