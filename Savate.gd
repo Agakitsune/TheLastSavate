@@ -10,8 +10,8 @@ var actual: Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	play("default")
-	dest = victim.global_position - Vector2(0, 0)
-	actual = global_position - Vector2(0, 0)
+	dest = victim.global_position
+	actual = global_position
 	pass # Replace with function body.
 
 func moveTo(delta):

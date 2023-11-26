@@ -1,11 +1,12 @@
 extends AnimatedSprite2D
 
 var life: int
+var notifier: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	play()
-	life = 100
+	life = 1
 	setHpBar()
 	pass # Replace with function body.
 
@@ -13,7 +14,7 @@ func damage(value):
 	life -= value
 	$HealthBar.value = life
 	if life <= 0:
-#		die()
+		notifier.notify("BossDead", null)
 		pass
 
 func setHpBar():

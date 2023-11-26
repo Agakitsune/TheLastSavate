@@ -33,6 +33,8 @@ var _left_over = false
 var _down_over = false
 var _right_over = false
 
+var _boss_tile = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_child(_player)
@@ -40,9 +42,17 @@ func _ready():
 	_player.hide()
 	_player.stage = stage
 	_player.notifier = self
+	_boss.notifier = self
 	$Button.hide()
 	$Button2.hide()
 	$Button3.hide()
+	
+	var tile = stage.local_to_map(_boss.global_position)
+	for x in range(-2, 3):
+		for y in range(-2, 3):
+			_boss_tile.append(Vector2(tile.x + x, tile.y + y))
+	
+	print(_boss_tile)
 	
 	$TileMap.add_child(_boss)
 
@@ -54,7 +64,9 @@ func _ready():
 	for pos in start_tile:
 		select_stage.set_cell(0, pos, 0, Vector2(0, 0))
 	select_stage.replace()
+
 	
+
 	var t = preload("res://scenes/enemy/Turn.tscn")	
 	for i in range(0, len(enemy_tile)):
 		var e = enemy[i].instantiate()
@@ -98,6 +110,8 @@ func notify(event: String, data):
 		remove_child(data)
 		var i = _enemies.find(data)
 		$Camera2D/CanvasLayer.remove_child(_turn[i])
+	elif event == "BossDead":
+		$TileMap.remove_child(_boss)
 
 func _enter_start_tile(pos: Vector2):
 	if _phase == Phase.SELECTION_PHASE:
@@ -113,9 +127,17 @@ func _enter_start_tile(pos: Vector2):
 		select_stage.hide()
 	elif _phase == Phase.ATTACK_PHASE:
 		var e = null
-		for en in _enemies:
-			if en.global_position == pos:
-				e = en
+		var t = stage.local_to_map(pos);
+		print(pos)
+		print(t)
+		print(t in _boss_tile)
+		var i = _boss_tile.find(t)
+		if i:
+			e = _boss
+		else:
+			for en in _enemies:
+				if en.global_position == pos:
+					e = en
 		_player.attackTo(pos, e)
 		select_stage.hide()
 		_setup_phase(Phase.ORIENTATION2_PHASE)
@@ -200,6 +222,10 @@ func _generate_attack():
 		if tile_pos in tiles:
 			attack.append(tile_pos)
 	tiles.clear()
+
+	for c in _boss_tile:
+		if distance(c, tile_pos) == 2:
+			attack.append(c)
 
 	for c in tiles:
 		select_stage.set_cell(0, c, 0, Vector2(0,0))
