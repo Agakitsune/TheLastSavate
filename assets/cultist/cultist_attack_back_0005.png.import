@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds4um8hw8odeb"
-path="res://.godot/imported/left.png-23b9104313d414f3d7b5041f7360b7ac.ctex"
+uid="uid://djxfs35enjc6p"
+path="res://.godot/imported/cultist_attack_back_0005.png-a924c638844259b5cd92ccc2c50586c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/left.png"
-dest_files=["res://.godot/imported/left.png-23b9104313d414f3d7b5041f7360b7ac.ctex"]
+source_file="res://assets/cultist/cultist_attack_back_0005.png"
+dest_files=["res://.godot/imported/cultist_attack_back_0005.png-a924c638844259b5cd92ccc2c50586c2.ctex"]
 
 [params]
 

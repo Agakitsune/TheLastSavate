@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbbyry3nrf6md"
-path="res://.godot/imported/move.png-33f8bcb686112ff50a89f38cea6406cb.ctex"
+uid="uid://c40bd8teyfi5u"
+path="res://.godot/imported/Idle_Body_045.png-a1921f9aa75de5fe73ae5716c8e9dd5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/move.png"
-dest_files=["res://.godot/imported/move.png-33f8bcb686112ff50a89f38cea6406cb.ctex"]
+source_file="res://assets/Idle_Body_045.png"
+dest_files=["res://.godot/imported/Idle_Body_045.png-a1921f9aa75de5fe73ae5716c8e9dd5b.ctex"]
 
 [params]
 

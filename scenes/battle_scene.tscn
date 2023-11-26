@@ -1,0 +1,193 @@
+[gd_scene load_steps=24 format=3 uid="uid://kcjgc1l022nt"]
+
+[ext_resource type="Script" path="res://scenes/battle_scene.gd" id="1_8fog6"]
+[ext_resource type="Texture2D" uid="uid://b6sfrgq2c0ms0" path="res://assets/dirtHigh.png" id="1_r1vtu"]
+[ext_resource type="PackedScene" uid="uid://brog4r4tmoufq" path="res://scenes/enemy/cultist.tscn" id="2_3kojh"]
+[ext_resource type="Texture2D" uid="uid://cuj1oahx4m24a" path="res://assets/darkdirtHigh.png" id="2_w4qtd"]
+[ext_resource type="Texture2D" uid="uid://2rwru0alxxih" path="res://assets/textures/tiles/pyro.png" id="3_4lqnr"]
+[ext_resource type="PackedScene" uid="uid://c4860qd5whprm" path="res://scenes/enemy/SuperPayet.tscn" id="3_ktutg"]
+[ext_resource type="Script" path="res://Effects.gd" id="4_ec8k7"]
+[ext_resource type="Script" path="res://scenes/Stage.gd" id="5_8yh2m"]
+[ext_resource type="Texture2D" uid="uid://bd7eo8nlldriw" path="res://assets/dummy.png" id="5_cs17a"]
+[ext_resource type="Texture2D" uid="uid://df7dbel23dmq8" path="res://assets/textures/tiles/player_select.png" id="7_ms4s8"]
+[ext_resource type="Script" path="res://scenes/Start.gd" id="8_7nic1"]
+[ext_resource type="Texture2D" uid="uid://bnv4fls73pam1" path="res://assets/textures/tiles/player_attack.png" id="9_6uqh5"]
+[ext_resource type="Script" path="res://scenes/Sprite2D.gd" id="9_36hcb"]
+[ext_resource type="Texture2D" uid="uid://lxh3ddxim1fc" path="res://assets/textures/icon/arrow.png" id="9_wi37e"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1gqff"]
+texture = ExtResource("1_r1vtu")
+texture_region_size = Vector2i(100, 66)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sl2xy"]
+texture = ExtResource("2_w4qtd")
+texture_region_size = Vector2i(100, 66)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ma5v"]
+texture = ExtResource("3_4lqnr")
+texture_region_size = Vector2i(100, 66)
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 0.2
+0:0/animation_frame_2/duration = 0.2
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 0.2
+0:0/animation_frame_5/duration = 0.2
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_r6cna"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(100, 50)
+sources/0 = SubResource("TileSetAtlasSource_1gqff")
+sources/1 = SubResource("TileSetAtlasSource_sl2xy")
+sources/2 = SubResource("TileSetAtlasSource_8ma5v")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tuc15"]
+texture = ExtResource("7_ms4s8")
+texture_region_size = Vector2i(100, 66)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oqqff"]
+texture = ExtResource("9_6uqh5")
+texture_region_size = Vector2i(100, 66)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qunvv"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(100, 50)
+sources/0 = SubResource("TileSetAtlasSource_tuc15")
+sources/1 = SubResource("TileSetAtlasSource_oqqff")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cm05y"]
+texture = ExtResource("3_4lqnr")
+texture_region_size = Vector2i(100, 66)
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 0.2
+0:0/animation_frame_2/duration = 0.2
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 0.2
+0:0/animation_frame_5/duration = 0.2
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_878ou"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(100, 50)
+sources/0 = SubResource("TileSetAtlasSource_cm05y")
+
+[node name="BattleScene" type="Node2D" node_paths=PackedStringArray("stage", "select_stage")]
+script = ExtResource("1_8fog6")
+start_tile = Array[Vector2]([Vector2(-1, 2), Vector2(-2, 2), Vector2(0, 2)])
+enemy_tile = Array[Vector2]([Vector2(0, 0)])
+enemy = Array[PackedScene]([ExtResource("2_3kojh")])
+player = ExtResource("3_ktutg")
+stage = NodePath("Stage")
+select_stage = NodePath("Start")
+
+[node name="Stage" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_r6cna")
+format = 2
+layer_0/name = "Ground"
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(-2, 0, 0, 65534, 0, 0, 131070, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 65536, 0, 0, 0, 0, 0, 65535, 0, 0, -65536, 0, 0, -1, 0, 0, 131071, 0, 0, 131073, 0, 0, 65537, 0, 0, 1, 0, 0, -65535, 0, 0, -131071, 0, 0, -131072, 0, 0, -65537, 0, 0, -65538, 0, 0, -65539, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0)
+layer_1/name = "Out"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = true
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(262141, 1, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 1, 0, 131074, 1, 0, 65538, 1, 0, 2, 1, 0, -65534, 1, 0, -131070, 1, 0, -196607, 1, 0, -196608, 1, 0, -131073, 1, 0, -131074, 1, 0, -131075, 1, 0, -65540, 1, 0, -4, 1, 0, 65532, 1, 0, 131068, 1, 0, 196604, 1, 0)
+script = ExtResource("5_8yh2m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Start" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_qunvv")
+format = 2
+layer_0/name = "Layer"
+layer_0/y_sort_enabled = true
+script = ExtResource("8_7nic1")
+owner_path = NodePath("..")
+
+[node name="Effect" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_878ou")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/z_index = 100
+layer_0/tile_data = PackedInt32Array(262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 131074, 0, 0, 65538, 0, 0, 2, 0, 0, -65534, 0, 0, -131070, 0, 0, -196607, 0, 0, -196608, 0, 0, -131073, 0, 0, -131074, 0, 0, -131075, 0, 0, -65540, 0, 0, -4, 0, 0, 131068, 0, 0, 196604, 0, 0, 65532, 0, 0)
+script = ExtResource("4_ec8k7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_cs17a")
+offset = Vector2(0, -42)
+region_enabled = true
+region_rect = Rect2(0, 0, 100, 150)
+script = ExtResource("9_36hcb")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -151.0
+offset_top = 306.0
+offset_right = 151.0
+offset_bottom = 352.0
+text = "KONICHIWAAAAAAAAAAAAAAAAAAAA"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -151.0
+offset_top = 306.0
+offset_right = 151.0
+offset_bottom = 352.0
+text = "STARTU BATTLERU"
+
+[node name="Up" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Up"]
+polygon = PackedVector2Array(-11, 0, 0, 8, 11, 0, 0, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Up"]
+texture = ExtResource("9_wi37e")
+
+[node name="Left" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Left"]
+polygon = PackedVector2Array(-11, 0, 0, -8, 11, 0, 0, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Left"]
+texture = ExtResource("9_wi37e")
+flip_h = true
+
+[node name="Right" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Right"]
+polygon = PackedVector2Array(-11, 0, 0, -8, 11, 0, 0, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Right"]
+texture = ExtResource("9_wi37e")
+flip_v = true
+
+[node name="Down" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Down"]
+polygon = PackedVector2Array(0, -8, 11, 0, 0, 8, -11, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Down"]
+texture = ExtResource("9_wi37e")
+flip_h = true
+flip_v = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="mouse_entered" from="Up" to="." method="_orientation_up_in"]
+[connection signal="mouse_exited" from="Up" to="." method="_orientation_up_out"]
+[connection signal="mouse_entered" from="Left" to="." method="_orientation_left_in"]
+[connection signal="mouse_exited" from="Left" to="." method="_orientation_left_out"]
+[connection signal="mouse_entered" from="Right" to="." method="_orientation_right_in"]
+[connection signal="mouse_exited" from="Right" to="." method="_orientation_right_out"]
+[connection signal="mouse_entered" from="Down" to="." method="_orientation_down_in"]
+[connection signal="mouse_exited" from="Down" to="." method="_orientation_down_out"]
