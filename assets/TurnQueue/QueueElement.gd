@@ -24,9 +24,9 @@ func _ready():
 		_visuals.backColor = backColor
 	add_child(_visuals)
 	_visuals.hide()
-	_visuals.z_index = 100
 	_owner.connect("mouse_entered", _mouse_enter)
 	_owner.connect("mouse_exited", _mouse_exit)
+	_visuals.z_index = 100
 	pass # Replace with function body.
 
 func _mouse_enter():
@@ -37,5 +37,5 @@ func _mouse_exit():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	_visuals.global_position = get_global_mouse_position()
+	_visuals.global_position = get_global_mouse_position() - Vector2(_visuals.size.x, 0)
 	pass

@@ -11,8 +11,7 @@ func _ready():
 
 func initialize():
 	current_character = get_child(0)
-	arrow_pos  = current_character
-	current_character.color.a = 0
+	current_character.color.a = 1
 
 func _input(event):
 	if event is InputEventKey:
@@ -21,7 +20,7 @@ func _input(event):
 
 func play_turn():
 	current_character.get_child(0)
-	current_character.color.a = 1
+	current_character.color.a = 0
 	var new_index : int = (current_character.get_index() + 1) % get_child_count()
 	current_character = get_child(new_index)
-	current_character.color.a = 0	
+	current_character.color.a = 1
