@@ -19,4 +19,4 @@ func _on_animation_player_animation_finished(anim_name):
 		splashSound.play()
 		$AnimationPlayer.play("fadeToBlack")
 	else:
-		get_tree().change_scene_to_file("res://main_menu.tscn")
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

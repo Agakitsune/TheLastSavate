@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cckj0l2mmy0x5"]
 
 [ext_resource type="Script" path="res://Node2D.gd" id="1_wjekc"]
-[ext_resource type="FontFile" path="res://assets/font/PiratesBay.ttf" id="2_xh4ov"]
+[ext_resource type="FontFile" uid="uid://pkh4esdwqc5c" path="res://assets/font/PiratesBay.ttf" id="2_xh4ov"]
 
 [node name="FloatingText" type="Node2D"]
 script = ExtResource("1_wjekc")

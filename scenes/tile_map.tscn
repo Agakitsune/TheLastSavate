@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://c87ljixr0wrol"]
 
-[ext_resource type="Texture2D" uid="uid://cuokdb4pni0j" path="res://assets/spritesheet.png" id="1_fv8u2"]
+[ext_resource type="Texture2D" path="res://assets/spritesheet.png" id="1_fv8u2"]
 [ext_resource type="Texture2D" uid="uid://bv03m06g4agqr" path="res://assets/spritesheetb.png" id="2_1w5j6"]
 [ext_resource type="Script" path="res://scenes/TileMap.gd" id="2_s3n0k"]
 
