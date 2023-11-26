@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3towcdysa8nf"]
+
+[ext_resource type="Script" path="res://scenes/special_tile/Select.gd" id="1_pe43m"]
+[ext_resource type="Texture2D" uid="uid://df7dbel23dmq8" path="res://assets/textures/tiles/player_select.png" id="1_tjbbs"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_pe43m")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-56, -7, 0, -37, 57, -7, 0, 23)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tjbbs")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
