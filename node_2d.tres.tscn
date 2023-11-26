@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2te5x3e3qvf"]
+[gd_scene load_steps=2 format=3 uid="uid://rr1mh2bjqjra"]
 
-[ext_resource type="Texture2D" uid="uid://b6nel8kq30xik" path="res://assets/iso_tile green.png" id="1_a0brm"]
+[ext_resource type="Texture2D" path="res://assets/iso_tile green.png" id="1_a0brm"]
 
 [node name="Node2D" type="Node2D"]
 
