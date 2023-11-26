@@ -1,13 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgh13qtit8ssd"]
+[gd_scene load_steps=10 format=3 uid="uid://rf5q0pxc2p0r"]
 
 [ext_resource type="Texture2D" uid="uid://d4fwal4sjsnym" path="res://colors/solidWhite.png" id="1_3u76g"]
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="1_rbjxl"]
 [ext_resource type="Texture2D" uid="uid://46rilqhaqv80" path="res://icon.svg" id="1_us6ts"]
 [ext_resource type="Script" path="res://Enemy.gd" id="2_d8jtp"]
-[ext_resource type="Texture2D" uid="uid://btagm11k6p8sr" path="res://assets/heartFull.png" id="2_mn2v7"]
-[ext_resource type="Texture2D" uid="uid://bhyw6tlhqb5rg" path="res://assets/heartShape.png" id="3_5y2ec"]
+[ext_resource type="Texture2D" path="res://assets/heartFull.png" id="2_mn2v7"]
+[ext_resource type="Texture2D" path="res://assets/heartShape.png" id="3_5y2ec"]
 [ext_resource type="FontFile" uid="uid://pkh4esdwqc5c" path="res://assets/font/PiratesBay.ttf" id="4_hul5k"]
-[ext_resource type="Texture2D" uid="uid://c15jyaqrwrwqg" path="res://assets/heartBorders.png" id="4_nyrgy"]
+[ext_resource type="Texture2D" path="res://assets/heartBorders.png" id="4_nyrgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqwcq"]
 

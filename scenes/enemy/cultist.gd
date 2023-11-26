@@ -7,7 +7,18 @@ var life: int
 func _ready():
 	life = 10
 	walk = false
+	setHpBar()
 	pass # Replace with function body.
+
+func damage(value):
+	life -= value
+	$HealthBar.value = life
+	if life <= 0:
+		pass
+
+func setHpBar():
+	$HealthBar.max_value = life
+	$HealthBar.value = life
 
 func orientate(orientation: String):
 	if orientation == "up":

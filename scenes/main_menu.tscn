@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs86b6v74xyg7"]
+[gd_scene load_steps=4 format=3 uid="uid://q7sxd15nlje4"]
 
 [ext_resource type="Script" path="res://Main Menu.gd" id="1_vob7v"]
-[ext_resource type="Texture2D" uid="uid://cqrlq0u0yldgi" path="res://assets/background.png" id="2_sphn4"]
+[ext_resource type="Texture2D" path="res://assets/background.png" id="2_sphn4"]
 [ext_resource type="FontFile" uid="uid://pkh4esdwqc5c" path="res://assets/font/PiratesBay.ttf" id="3_wkjgg"]
 
 [node name="Main Menu" type="Control"]

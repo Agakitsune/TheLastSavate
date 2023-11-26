@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://kcjgc1l022nt"]
+[gd_scene load_steps=33 format=3 uid="uid://ckfkrv7a7kgf5"]
 
 [ext_resource type="Script" path="res://scenes/battle_scene.gd" id="1_8fog6"]
 [ext_resource type="Texture2D" uid="uid://b6sfrgq2c0ms0" path="res://assets/dirtHigh.png" id="1_r1vtu"]
@@ -14,6 +14,15 @@
 [ext_resource type="Texture2D" uid="uid://bnv4fls73pam1" path="res://assets/textures/tiles/player_attack.png" id="9_6uqh5"]
 [ext_resource type="Script" path="res://scenes/Sprite2D.gd" id="9_36hcb"]
 [ext_resource type="Texture2D" uid="uid://lxh3ddxim1fc" path="res://assets/textures/icon/arrow.png" id="9_wi37e"]
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="15_twjmi"]
+[ext_resource type="Texture2D" uid="uid://d4fwal4sjsnym" path="res://colors/solidWhite.png" id="16_ykgs6"]
+[ext_resource type="Texture2D" path="res://assets/heartFull.png" id="17_12uvc"]
+[ext_resource type="Texture2D" path="res://assets/heartShape.png" id="18_kg488"]
+[ext_resource type="FontFile" uid="uid://pkh4esdwqc5c" path="res://assets/font/PiratesBay.ttf" id="19_i371a"]
+[ext_resource type="Texture2D" path="res://assets/heartBorders.png" id="20_gxbab"]
+[ext_resource type="Script" path="res://scenes/Element.gd" id="21_74eyx"]
+[ext_resource type="Texture2D" uid="uid://kcve2k7hwmk8" path="res://assets/cultist/cultist_walk_front_0001.png" id="22_ksou0"]
+[ext_resource type="Script" path="res://scenes/ElementSprite.gd" id="23_vhbyq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1gqff"]
 texture = ExtResource("1_r1vtu")
@@ -104,6 +113,131 @@ layer_1/tile_data = PackedInt32Array(262141, 1, 0, 262142, 1, 0, 262143, 1, 0, 1
 script = ExtResource("5_8yh2m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+script = ExtResource("15_twjmi")
+
+[node name="Element" type="ColorRect" parent="Camera2D/CanvasLayer"]
+show_behind_parent = true
+offset_left = 1370.0
+offset_top = 188.0
+offset_right = 1434.0
+offset_bottom = 252.0
+color = Color(1, 0, 0, 0)
+script = ExtResource("21_74eyx")
+texture = ExtResource("22_ksou0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer/Element"]
+script = ExtResource("23_vhbyq")
+vie = 100
+attack = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="Camera2D/CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 85.0
+offset_top = -100.0
+offset_right = 315.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D/CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/CanvasLayer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("16_ykgs6")
+
+[node name="TextureRect2" type="TextureRect" parent="Camera2D/CanvasLayer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("16_ykgs6")
+
+[node name="TextureRect3" type="TextureRect" parent="Camera2D/CanvasLayer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("16_ykgs6")
+
+[node name="Health" type="Control" parent="Camera2D/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="fullHeart" type="TextureRect" parent="Camera2D/CanvasLayer/Health"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -86.0
+offset_right = 252.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("17_12uvc")
+
+[node name="ProgressHeart" type="TextureProgressBar" parent="Camera2D/CanvasLayer/Health/fullHeart"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 280.0
+value = 70.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("18_kg488")
+tint_progress = Color(1, 0, 0.0156863, 0.678431)
+
+[node name="LabelHeart" type="Label" parent="Camera2D/CanvasLayer/Health/fullHeart"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -17.5
+offset_right = 23.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("19_i371a")
+theme_override_font_sizes/font_size = 60
+
+[node name="transparenHeart" type="TextureRect" parent="Camera2D/CanvasLayer/Health"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -86.0
+offset_right = 252.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("20_gxbab")
 
 [node name="Start" type="TileMap" parent="."]
 y_sort_enabled = true
