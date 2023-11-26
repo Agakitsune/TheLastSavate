@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://u0hlong8agpf"]
+[gd_scene load_steps=19 format=3 uid="uid://bhq104dblpnh0"]
 
 [ext_resource type="Texture2D" uid="uid://2rwru0alxxih" path="res://assets/fire_tile.png" id="1_b3j0l"]
 [ext_resource type="Texture2D" uid="uid://ctb4fx1k8ekpc" path="res://assets/isometric tileset/spritesheet.png" id="1_fb0bd"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cuj1oahx4m24a" path="res://assets/darkdirtHigh.png" id="3_x1r1t"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="4_005db"]
 [ext_resource type="Texture2D" uid="uid://ibqbx6nj8e0v" path="res://assets/select.png" id="4_l3eyq"]
-[ext_resource type="Texture2D" uid="uid://46rilqhaqv80" path="res://icon.svg" id="5_vmlpc"]
+[ext_resource type="Texture2D" uid="uid://lva5dsjshls3" path="res://icon.svg" id="5_vmlpc"]
 [ext_resource type="Script" path="res://Icon.gd" id="6_kupa5"]
 [ext_resource type="Script" path="res://Effects.gd" id="10_i1y0b"]
 
