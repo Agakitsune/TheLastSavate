@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cckj0l2mmy0x5"]
+
+[ext_resource type="Script" path="res://Node2D.gd" id="1_wjekc"]
+[ext_resource type="FontFile" path="res://assets/font/PiratesBay.ttf" id="2_xh4ov"]
+
+[node name="FloatingText" type="Node2D"]
+script = ExtResource("1_wjekc")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -52.0
+offset_right = 58.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_xh4ov")
+theme_override_font_sizes/font_size = 30
+text = "200"
+horizontal_alignment = 1
+vertical_alignment = 1
