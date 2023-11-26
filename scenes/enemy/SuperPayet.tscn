@@ -1,0 +1,208 @@
+[gd_scene load_steps=36 format=3 uid="uid://c4860qd5whprm"]
+
+[ext_resource type="Texture2D" uid="uid://43a1378fh2xs" path="res://assets/super_payet/Attack_front_0003.png" id="1_ir2tt"]
+[ext_resource type="Script" path="res://scenes/enemy/SuperPayet.gd" id="1_ngyr4"]
+[ext_resource type="Texture2D" uid="uid://y7ee8cldovdu" path="res://assets/super_payet/Attack_front_0004.png" id="2_oauuy"]
+[ext_resource type="Texture2D" uid="uid://cmenij2nxo1mc" path="res://assets/super_payet/Attack_front_0005.png" id="3_j7k3w"]
+[ext_resource type="Texture2D" uid="uid://cuvvschicnbrr" path="res://assets/super_payet/Attack_back_0003.png" id="4_mpy0k"]
+[ext_resource type="Texture2D" uid="uid://ys8pms0dm1hr" path="res://assets/super_payet/Attack_back_0004.png" id="5_tm1h4"]
+[ext_resource type="Texture2D" uid="uid://c32j838haxwq7" path="res://assets/super_payet/Attack_back_0005.png" id="6_7wjkq"]
+[ext_resource type="Texture2D" uid="uid://d2p0hapi0u2s1" path="res://assets/super_payet/SuperPayet_0001.png" id="7_c03mk"]
+[ext_resource type="Texture2D" uid="uid://lqumiwbelak3" path="res://assets/super_payet/SuperPayet_death_down.png" id="7_xbmlj"]
+[ext_resource type="Texture2D" uid="uid://bf2pvmhlr5s7v" path="res://assets/super_payet/SuperPayet_death.png" id="8_3bywo"]
+[ext_resource type="Texture2D" uid="uid://bd6nwxtsscpus" path="res://assets/super_payet/SuperPayet_0002.png" id="8_dipaa"]
+[ext_resource type="Texture2D" uid="uid://dyn71enjrj3ny" path="res://assets/super_payet/SuperPayet_0003.png" id="9_tytfp"]
+[ext_resource type="Texture2D" uid="uid://brqjvcpnxn86s" path="res://assets/super_payet/SuperPayet_0004.png" id="10_7sy2j"]
+[ext_resource type="Texture2D" uid="uid://co1rr4qm5if2j" path="res://assets/super_payet/SuperPayet_0005.png" id="11_h8bdh"]
+[ext_resource type="Texture2D" uid="uid://cqs7v2oj8uaaa" path="res://assets/super_payet/SuperPayet_neutral_back_0001.png" id="12_whj0g"]
+[ext_resource type="Texture2D" uid="uid://cyoqdhrt6uhac" path="res://assets/super_payet/SuperPayet_neutral_back_0002.png" id="13_7xtmf"]
+[ext_resource type="Texture2D" uid="uid://dnt83ohrq8a8d" path="res://assets/super_payet/SuperPayet_neutral_back_0003.png" id="14_sie2a"]
+[ext_resource type="Texture2D" uid="uid://c7mogfb40l2kl" path="res://assets/super_payet/SuperPayet_neutral_back_0004.png" id="15_2n6mq"]
+[ext_resource type="Texture2D" uid="uid://gcyq0bspuica" path="res://assets/super_payet/SuperPayet_neutral_back_0005.png" id="16_kqrnh"]
+[ext_resource type="Texture2D" uid="uid://c5aeo5da1eaa" path="res://assets/super_payet/SuperPayet_R_cycle_front_0002.png" id="17_6owmy"]
+[ext_resource type="Texture2D" uid="uid://o4b53kuklmi8" path="res://assets/super_payet/SuperPayet_R_cycle_front_0003.png" id="18_ndj1p"]
+[ext_resource type="Texture2D" uid="uid://jjnt2wmv2kry" path="res://assets/super_payet/SuperPayet_R_cycle_back_0002.png" id="19_n8bmr"]
+[ext_resource type="Texture2D" uid="uid://c01nebynh4exs" path="res://assets/super_payet/SuperPayet_R_cycle_back_0003.png" id="20_yeghw"]
+[ext_resource type="PackedScene" uid="uid://8h17x51sq7s0" path="res://scenes/enemy/Savate.tscn" id="22_wdrd2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7k18"]
+atlas = ExtResource("7_xbmlj")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvg0t"]
+atlas = ExtResource("7_xbmlj")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8pxk"]
+atlas = ExtResource("7_xbmlj")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi5cw"]
+atlas = ExtResource("7_xbmlj")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cswl2"]
+atlas = ExtResource("7_xbmlj")
+region = Rect2(256, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph855"]
+atlas = ExtResource("8_3bywo")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnsc7"]
+atlas = ExtResource("8_3bywo")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sseeo"]
+atlas = ExtResource("8_3bywo")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h5ku"]
+atlas = ExtResource("8_3bywo")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur2mq"]
+atlas = ExtResource("8_3bywo")
+region = Rect2(256, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vvonw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ir2tt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oauuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j7k3w")
+}],
+"loop": false,
+"name": &"attack_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_mpy0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tm1h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7wjkq")
+}],
+"loop": false,
+"name": &"attack_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7k18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvg0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8pxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi5cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cswl2")
+}],
+"loop": true,
+"name": &"death_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph855")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnsc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sseeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h5ku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur2mq")
+}],
+"loop": true,
+"name": &"death_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_c03mk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dipaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tytfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7sy2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_h8bdh")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_whj0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7xtmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_sie2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2n6mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kqrnh")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_6owmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ndj1p")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_n8bmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yeghw")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_vvonw")
+animation = &"attack_up"
+offset = Vector2(0, -20)
+script = ExtResource("1_ngyr4")
+savate = ExtResource("22_wdrd2")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
