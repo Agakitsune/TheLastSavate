@@ -200,7 +200,7 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_vvonw")
-animation = &"death_up"
+animation = &"attack_up"
 offset = Vector2(0, -20)
 script = ExtResource("1_ngyr4")
 savate = ExtResource("22_wdrd2")
