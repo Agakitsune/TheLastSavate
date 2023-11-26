@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://buyc15lr3vfxs"]
+
+[ext_resource type="Script" path="res://scenes/Turn_by_turn.gd" id="1_tkqne"]
+[ext_resource type="Texture2D" uid="uid://kcve2k7hwmk8" path="res://assets/cultist/cultist_walk_front_0001.png" id="3_l5tbu"]
+[ext_resource type="Script" path="res://scenes/ElementSprite.gd" id="4_sv683"]
+[ext_resource type="Script" path="res://scenes/Element.gd" id="5_d1u7q"]
+
+[node name="Turn_by_turn" type="Node2D"]
+script = ExtResource("1_tkqne")
+
+[node name="Element" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_left = 1370.0
+offset_top = 188.0
+offset_right = 1434.0
+offset_bottom = 252.0
+color = Color(1, 0, 0, 0)
+script = ExtResource("5_d1u7q")
+texture = ExtResource("3_l5tbu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Element"]
+script = ExtResource("4_sv683")
+vie = 100
+attack = 20
+
+[node name="Element2" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_left = 1370.0
+offset_top = 261.0
+offset_right = 1434.0
+offset_bottom = 325.0
+color = Color(1, 0, 0, 0)
+script = ExtResource("5_d1u7q")
+texture = ExtResource("3_l5tbu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Element2"]
+position = Vector2(0, -73)
+script = ExtResource("4_sv683")
+vie = 10
+attack = 10
+
+[node name="Element3" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_left = 1370.0
+offset_top = 333.0
+offset_right = 1434.0
+offset_bottom = 397.0
+color = Color(1, 0, 0, 0)
+script = ExtResource("5_d1u7q")
+texture = ExtResource("3_l5tbu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Element3"]
+position = Vector2(0, -218)
+script = ExtResource("4_sv683")
+vie = 10
+attack = 15
+
+[node name="Element4" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_left = 1370.0
+offset_top = 408.0
+offset_right = 1434.0
+offset_bottom = 472.0
+color = Color(1, 0, 0, 0)
+script = ExtResource("5_d1u7q")
+texture = ExtResource("3_l5tbu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Element4"]
+position = Vector2(0, -511)
+script = ExtResource("4_sv683")
+vie = 10
+attack = 4

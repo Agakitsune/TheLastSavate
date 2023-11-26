@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqqo6hdmafe4"]
+
+[ext_resource type="Script" path="res://assets/Turntip.gd" id="1_42qrw"]
+
+[node name="Turntip" type="AspectRatioContainer"]
+offset_right = 106.0
+offset_bottom = 67.0
+script = ExtResource("1_42qrw")
+
+[node name="M" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Back" type="ColorRect" parent="M"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="M1" type="MarginContainer" parent="M"]
+layout_mode = 2
+
+[node name="V" type="VBoxContainer" parent="M/M1"]
+layout_mode = 2
+alignment = 1
+
+[node name="M2" type="MarginContainer" parent="M/M1/V"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="M/M1/V/M2"]
+layout_mode = 2
+text = "Stats"
+horizontal_alignment = 1
+vertical_alignment = 1
