@@ -18,7 +18,7 @@ func moveTo(delta):
 	var dx = dest.x - actual.x
 	var dy = dest.y - actual.y
 
-	if (dx >= -1 and dx <= 1 and dy >= -1 and dy <= 1):
+	if (dx >= -10 and dx <= 10 and dy >= -10 and dy <= 10):
 		notifier.notify("Damage", victim)
 		get_parent().remove_child(self)
 		pass
