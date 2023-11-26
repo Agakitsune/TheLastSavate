@@ -4,8 +4,14 @@ extends AspectRatioContainer
 @export var stats: Array[String]
 @export var value: Array[int]
 @export var backColor: Color
+
+var _value: Array[int]
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_load()
+	pass # Replace with function body.
+
+func _load():
 	$M/Back.color = backColor
 	$M/M1/V/M2/Title.text = title
 
@@ -19,14 +25,15 @@ func _ready():
 		stat.set("theme_override_font_sizes/font_size", 14)
 		
 		var val = Label.new()
-		val.text = str(value[i])
+		if (_value.is_empty()):
+			val.text = str(value[i])
+		else:
+			val.text = str(_value[i])
 		val.set("theme_override_font_sizes/font_size", 14)
 		
 		line.add_child(stat)
 		line.add_child(val)
 		$M/M1/V.add_child(line)
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
