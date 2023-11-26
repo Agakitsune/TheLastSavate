@@ -12,12 +12,14 @@ extends Node2D
 @onready var _player = player.instantiate()
 
 var _enemies: Array[Node]
+var _turn: Array[Node]
 
 enum Phase {
 	SELECTION_PHASE,
 	ORIENTATION_PHASE,
 	MOVE_PHASE,
-	ATTACK_PHASE
+	ATTACK_PHASE,
+	ORIENTATION2_PHASE
 }
 
 var _phase: Phase
@@ -46,12 +48,31 @@ func _ready():
 		select_stage.set_cell(0, pos, 0, Vector2(0, 0))
 	select_stage.replace()
 	
+	var t = preload("res://scenes/enemy/Turn.tscn")	
 	for i in range(0, len(enemy_tile)):
 		var e = enemy[i].instantiate()
 		e.global_position = stage.map_to_local(enemy_tile[i])
 		e.orientate("down")
 		add_child(e)
 		_enemies.append(e)
+		
+		e.notifier = self
+		
+		var t_i = t.instantiate()
+		t_i.texture = load("res://assets/cultist/cultist_front_0001.png")
+		$Camera2D/CanvasLayer.add_child(t_i)
+		t_i.set_life(e.life)
+		t_i._ready()
+		t_i.global_position.y += len(_turn) * 70
+		_turn.append(t_i)
+	
+	var t_i = t.instantiate()
+	t_i.texture = load("res://assets/super_payet/SuperPayet_0001.png")
+	$Camera2D/CanvasLayer.add_child(t_i)
+	t_i.set_life(_player.life)
+	t_i._ready()
+	t_i.global_position.y += len(_turn) * 70
+	_turn.append(t_i)
 	
 	pass # Replace with function body.
 
@@ -60,9 +81,16 @@ func notify(event: String, data):
 	if event == "PlayerMove":
 		_setup_phase(Phase.ATTACK_PHASE)
 	elif event == "Damage":
-		print(data)
+		data.damage(5)
+		var i = _enemies.find(data)
+		_turn[i].set_life(data.life)
+		_turn[i]._ready()
 	elif event == "PlayerDead":
 		pass
+	elif event == "EnemyDead":
+		remove_child(data)
+		var i = _enemies.find(data)
+		$Camera2D/CanvasLayer.remove_child(_turn[i])
 
 func _enter_start_tile(pos: Vector2):
 	if _phase == Phase.SELECTION_PHASE:
@@ -83,6 +111,7 @@ func _enter_start_tile(pos: Vector2):
 				e = en
 		_player.attackTo(pos, e)
 		select_stage.hide()
+		_setup_phase(Phase.ORIENTATION2_PHASE)
 		pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -99,7 +128,7 @@ func _on_button_2_pressed():
 
 func _setup_phase(phase: Phase):
 	_phase = phase
-	if phase == Phase.ORIENTATION_PHASE:
+	if phase == Phase.ORIENTATION_PHASE or phase == Phase.ORIENTATION2_PHASE:
 		$Button.hide()
 		select_stage.hide()
 

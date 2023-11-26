@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/TurnQueue/Element.gd" id="1_r6blf"]
 [ext_resource type="Script" path="res://assets/TurnQueue/QueueElement.gd" id="2_qayqy"]
-[ext_resource type="PackedScene" uid="uid://dqqo6hdmafe4" path="res://assets/Turntip.tscn" id="3_vas5u"]
+[ext_resource type="PackedScene" path="res://assets/Turntip.tscn" id="3_vas5u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8sju3"]
 size = Vector2(63.75, 64)

@@ -1,5 +1,7 @@
 extends AnimatedSprite2D
 
+@export var notifier: Node
+
 var walk: bool
 var life: int
 
@@ -10,10 +12,19 @@ func _ready():
 	setHpBar()
 	pass # Replace with function body.
 
+func die():
+	var anim = animation.split("_")
+	if len(anim) > 1:
+		anim = anim[1]
+	print("_".join(["death", anim[0]]))
+	play("_".join(["death", anim]))
+	notifier.notify("EnemyDead", self)
+
 func damage(value):
 	life -= value
 	$HealthBar.value = life
 	if life <= 0:
+		die()
 		pass
 
 func setHpBar():

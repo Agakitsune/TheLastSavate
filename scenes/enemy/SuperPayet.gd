@@ -21,7 +21,7 @@ func die():
 	if len(anim) > 1:
 		anim = anim[1]
 	play("death_" + anim)
-	notifier.notify("PlayerDead")
+	notifier.notify("PlayerDead", null)
 
 func damage(value):
 	life -= value

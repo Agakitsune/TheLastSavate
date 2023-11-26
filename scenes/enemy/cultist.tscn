@@ -1,13 +1,15 @@
-[gd_scene load_steps=27 format=3 uid="uid://brog4r4tmoufq"]
+[gd_scene load_steps=35 format=3 uid="uid://brog4r4tmoufq"]
 
 [ext_resource type="Texture2D" uid="uid://ddxrsoirp06gv" path="res://assets/cultist/cultist_attack_front_0002.png" id="2_joncu"]
 [ext_resource type="Texture2D" uid="uid://cm6qhnc8nm824" path="res://assets/cultist/cultist_attack_front_0003.png" id="3_xe470"]
 [ext_resource type="Texture2D" uid="uid://fpbcihab3esv" path="res://assets/cultist/cultist_attack_front_0004.png" id="4_b5ko2"]
 [ext_resource type="Texture2D" uid="uid://djf4oowircc4p" path="res://assets/cultist/cultist_attack_front_0005.png" id="5_3yl3k"]
-[ext_resource type="Texture2D" path="res://assets/cultist/cultist_attack_back_0002.png" id="7_hex2y"]
-[ext_resource type="Texture2D" path="res://assets/cultist/cultist_attack_back_0003.png" id="8_24lvx"]
-[ext_resource type="Texture2D" path="res://assets/cultist/cultist_attack_back_0004.png" id="9_053vq"]
-[ext_resource type="Texture2D" path="res://assets/cultist/cultist_attack_back_0005.png" id="10_ubvvn"]
+[ext_resource type="Texture2D" uid="uid://cuiysn2e862ys" path="res://assets/cultist/cultist_attack_back_0002.png" id="7_hex2y"]
+[ext_resource type="Texture2D" uid="uid://cnibu31jm8c7a" path="res://assets/cultist/cultist_attack_back_0003.png" id="8_24lvx"]
+[ext_resource type="Texture2D" uid="uid://c8toy27dj7o0x" path="res://assets/cultist/Enemy_death_back.png" id="9_4qbj4"]
+[ext_resource type="Texture2D" uid="uid://cmnimsg7n0562" path="res://assets/cultist/cultist_attack_back_0004.png" id="9_053vq"]
+[ext_resource type="Texture2D" uid="uid://cq5pvmonu2hfw" path="res://assets/cultist/Enemy_death_front.png" id="10_76yqe"]
+[ext_resource type="Texture2D" uid="uid://djxfs35enjc6p" path="res://assets/cultist/cultist_attack_back_0005.png" id="10_ubvvn"]
 [ext_resource type="Texture2D" uid="uid://b2djciods8lak" path="res://assets/cultist/cultist_front_0001.png" id="11_suiuy"]
 [ext_resource type="Texture2D" uid="uid://bjt3qxck7frrd" path="res://assets/cultist/cultist_front_0002.png" id="12_ehl4u"]
 [ext_resource type="Texture2D" uid="uid://cfwof58t7m1gj" path="res://assets/cultist/cultist_front_0003.png" id="13_ud3dr"]
@@ -25,6 +27,30 @@
 [ext_resource type="Texture2D" uid="uid://dxcvyekvosrqr" path="res://assets/cultist/cultist_walk_back_0003.png" id="25_eg27c"]
 [ext_resource type="Texture2D" uid="uid://bc1pqw472u3gm" path="res://assets/cultist/cultist_walk_back_0004.png" id="26_vwic7"]
 [ext_resource type="Script" path="res://scenes/enemy/cultist.gd" id="27_6233f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggf17"]
+atlas = ExtResource("10_76yqe")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhddo"]
+atlas = ExtResource("10_76yqe")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj20l"]
+atlas = ExtResource("10_76yqe")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysj6h"]
+atlas = ExtResource("9_4qbj4")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvbbr"]
+atlas = ExtResource("9_4qbj4")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl4bd"]
+atlas = ExtResource("9_4qbj4")
+region = Rect2(128, 0, 64, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_apaqu"]
 animations = [{
@@ -60,6 +86,34 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggf17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhddo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oj20l")
+}],
+"loop": true,
+"name": &"death_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysj6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvbbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl4bd")
+}],
+"loop": true,
+"name": &"death_up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -133,7 +187,7 @@ animations = [{
 
 [node name="Cultist" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_apaqu")
-animation = &"down"
+animation = &"death_up"
 offset = Vector2(0, -20)
 script = ExtResource("27_6233f")
 

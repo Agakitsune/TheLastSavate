@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ckfkrv7a7kgf5"]
+[gd_scene load_steps=30 format=3 uid="uid://ckfkrv7a7kgf5"]
 
 [ext_resource type="Script" path="res://scenes/battle_scene.gd" id="1_8fog6"]
 [ext_resource type="Texture2D" uid="uid://b6sfrgq2c0ms0" path="res://assets/dirtHigh.png" id="1_r1vtu"]
@@ -16,13 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://lxh3ddxim1fc" path="res://assets/textures/icon/arrow.png" id="9_wi37e"]
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="15_twjmi"]
 [ext_resource type="Texture2D" uid="uid://d4fwal4sjsnym" path="res://colors/solidWhite.png" id="16_ykgs6"]
-[ext_resource type="Texture2D" path="res://assets/heartFull.png" id="17_12uvc"]
-[ext_resource type="Texture2D" path="res://assets/heartShape.png" id="18_kg488"]
+[ext_resource type="Texture2D" uid="uid://btagm11k6p8sr" path="res://assets/heartFull.png" id="17_12uvc"]
+[ext_resource type="Texture2D" uid="uid://bhyw6tlhqb5rg" path="res://assets/heartShape.png" id="18_kg488"]
 [ext_resource type="FontFile" uid="uid://pkh4esdwqc5c" path="res://assets/font/PiratesBay.ttf" id="19_i371a"]
-[ext_resource type="Texture2D" path="res://assets/heartBorders.png" id="20_gxbab"]
-[ext_resource type="Script" path="res://scenes/Element.gd" id="21_74eyx"]
-[ext_resource type="Texture2D" uid="uid://kcve2k7hwmk8" path="res://assets/cultist/cultist_walk_front_0001.png" id="22_ksou0"]
-[ext_resource type="Script" path="res://scenes/ElementSprite.gd" id="23_vhbyq"]
+[ext_resource type="Texture2D" uid="uid://c15jyaqrwrwqg" path="res://assets/heartBorders.png" id="20_gxbab"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1gqff"]
 texture = ExtResource("1_r1vtu")
@@ -116,22 +113,6 @@ script = ExtResource("5_8yh2m")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 script = ExtResource("15_twjmi")
-
-[node name="Element" type="ColorRect" parent="Camera2D/CanvasLayer"]
-show_behind_parent = true
-offset_left = 1370.0
-offset_top = 188.0
-offset_right = 1434.0
-offset_bottom = 252.0
-color = Color(1, 0, 0, 0)
-script = ExtResource("21_74eyx")
-texture = ExtResource("22_ksou0")
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer/Element"]
-script = ExtResource("23_vhbyq")
-vie = 100
-attack = 20
 
 [node name="PanelContainer" type="PanelContainer" parent="Camera2D/CanvasLayer"]
 anchors_preset = 7
