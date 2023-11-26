@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c30pjmwvs534q"]
+
+[ext_resource type="Texture2D" uid="uid://b6sfrgq2c0ms0" path="res://assets/dirtHigh.png" id="1_ujt3n"]
+[ext_resource type="Texture2D" uid="uid://cppsxqw6jw4xp" path="res://assets/boss/Grand-Mere_Kalle.png" id="2_d457g"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjxta"]
+texture = ExtResource("1_ujt3n")
+texture_region_size = Vector2i(100, 66)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_b354t"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(100, 50)
+sources/0 = SubResource("TileSetAtlasSource_wjxta")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_b354t")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(-3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 65537, 0, 0, 1, 0, 0, -65535, 0, 0, -131071, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="TileMap"]
+texture = ExtResource("2_d457g")
