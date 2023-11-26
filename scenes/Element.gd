@@ -11,6 +11,7 @@ func _ready():
 		
 		var sprite = obj.getSprite()
 		sprite.texture = texture
+		var control = obj.get_child(2)
 		add_child(obj)
 	pass # Replace with function body.
 

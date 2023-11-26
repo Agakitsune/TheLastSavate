@@ -14,6 +14,10 @@ class_name QueueElement
 
 var _visuals: Control
 # Called when the node enters the scene tree for the first time.
+
+func set_value(array):
+	_visuals.value = array
+
 func _ready():
 	_visuals = visuals_scene.instantiate()
 
