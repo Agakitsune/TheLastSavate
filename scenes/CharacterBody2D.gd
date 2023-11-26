@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 func _ready():
 	global_position = Vector2($"../TileMap".baseTile)
+	pass
 
 func _physics_process(_delta):
 	MoveMouse()
@@ -10,3 +11,4 @@ func _physics_process(_delta):
 func MoveMouse():
 	if Input.is_action_just_pressed("LeftClick"):
 		global_position = Vector2($"../TileMap".selectedTile)
+	pass

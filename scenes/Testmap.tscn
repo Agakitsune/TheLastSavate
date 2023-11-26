@@ -1,6 +1,5 @@
 [gd_scene load_steps=19 format=3 uid="uid://u0hlong8agpf"]
 
-[ext_resource type="Texture2D" uid="uid://2rwru0alxxih" path="res://assets/fire_tile.png" id="1_b3j0l"]
 [ext_resource type="Texture2D" uid="uid://ctb4fx1k8ekpc" path="res://assets/isometric tileset/spritesheet.png" id="1_fb0bd"]
 [ext_resource type="Texture2D" uid="uid://dqvdvsxwiufj8" path="res://assets/crossroad.png" id="2_acq4b"]
 [ext_resource type="Texture2D" uid="uid://b6sfrgq2c0ms0" path="res://assets/dirtHigh.png" id="3_itc70"]
@@ -9,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ibqbx6nj8e0v" path="res://assets/select.png" id="4_l3eyq"]
 [ext_resource type="Texture2D" uid="uid://46rilqhaqv80" path="res://icon.svg" id="5_vmlpc"]
 [ext_resource type="Script" path="res://Icon.gd" id="6_kupa5"]
+[ext_resource type="Texture2D" uid="uid://2rwru0alxxih" path="res://assets/textures/tiles/pyro.png" id="9_7vv3e"]
 [ext_resource type="Script" path="res://Effects.gd" id="10_i1y0b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lkye8"]
@@ -161,7 +161,7 @@ sources/7 = SubResource("TileSetAtlasSource_106lp")
 sources/3 = SubResource("TileSetAtlasSource_mca7q")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3cy8"]
-texture = ExtResource("1_b3j0l")
+texture = ExtResource("9_7vv3e")
 texture_region_size = Vector2i(100, 66)
 0:0/animation_frame_0/duration = 1.0
 0:0/animation_frame_1/duration = 0.2

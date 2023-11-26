@@ -1,0 +1,151 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgh13qtit8ssd"]
+
+[ext_resource type="Texture2D" uid="uid://d4fwal4sjsnym" path="res://colors/solidWhite.png" id="1_3u76g"]
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="1_rbjxl"]
+[ext_resource type="Texture2D" uid="uid://46rilqhaqv80" path="res://icon.svg" id="1_us6ts"]
+[ext_resource type="Script" path="res://Enemy.gd" id="2_d8jtp"]
+[ext_resource type="Texture2D" uid="uid://btagm11k6p8sr" path="res://assets/heartFull.png" id="2_mn2v7"]
+[ext_resource type="Texture2D" uid="uid://bhyw6tlhqb5rg" path="res://assets/heartShape.png" id="3_5y2ec"]
+[ext_resource type="FontFile" uid="uid://pkh4esdwqc5c" path="res://assets/font/PiratesBay.ttf" id="4_hul5k"]
+[ext_resource type="Texture2D" uid="uid://c15jyaqrwrwqg" path="res://assets/heartBorders.png" id="4_nyrgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqwcq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="InGameUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="InGameUI"]
+script = ExtResource("1_rbjxl")
+
+[node name="PanelContainer" type="PanelContainer" parent="InGameUI/CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 85.0
+offset_top = -100.0
+offset_right = 315.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="InGameUI/CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InGameUI/CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TextureRect" type="TextureRect" parent="InGameUI/CanvasLayer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_3u76g")
+
+[node name="TextureRect2" type="TextureRect" parent="InGameUI/CanvasLayer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_3u76g")
+
+[node name="TextureRect3" type="TextureRect" parent="InGameUI/CanvasLayer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_3u76g")
+
+[node name="Health" type="Control" parent="InGameUI/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="fullHeart" type="TextureRect" parent="InGameUI/CanvasLayer/Health"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -86.0
+offset_right = 252.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_mn2v7")
+
+[node name="ProgressHeart" type="TextureProgressBar" parent="InGameUI/CanvasLayer/Health/fullHeart"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 280.0
+value = 70.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("3_5y2ec")
+tint_progress = Color(1, 0, 0.0156863, 0.678431)
+
+[node name="LabelHeart" type="Label" parent="InGameUI/CanvasLayer/Health/fullHeart"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -17.5
+offset_right = 23.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_hul5k")
+theme_override_font_sizes/font_size = 60
+
+[node name="transparenHeart" type="TextureRect" parent="InGameUI/CanvasLayer/Health"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -86.0
+offset_right = 252.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_nyrgy")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+position = Vector2(824.5, 433.5)
+scale = Vector2(0.570312, 0.570312)
+texture = ExtResource("1_us6ts")
+script = ExtResource("2_d8jtp")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/CharacterBody2D"]
+shape = SubResource("RectangleShape2D_lqwcq")
+
+[node name="HealthBar" type="ProgressBar" parent="Enemy"]
+offset_left = -64.0
+offset_top = -93.8082
+offset_right = 66.0
+offset_bottom = -71.8082
+size_flags_horizontal = 4
+step = 1.0
+show_percentage = false
